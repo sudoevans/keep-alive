@@ -1,9 +1,6 @@
-name: Keep Alive
-
 on:
   schedule:
     - cron: '* * * * *' # Run every minute for testing
-
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
@@ -12,20 +9,20 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Generate and Commit Random String
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Run Node.js Script
         run: |
-          # Generate a random string
-          random_string=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
+          npm install
+          node index.js
 
-          # Increment the keep alive count
-          keep_alive_count=$(($(grep -oP 'keep alive \K\d+' README.md | tail -n 1) + 1))
-
-          # Append the random string and the incremented count to README.md
-          echo "$random_string  keep alive $keep_alive_count" >> README.md
-
-          # Commit the changes
-          git config user.name "Sudoevans"
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "sudoevans"
           git config user.email "snaveqiptoo@gmail.com"
           git add README.md
-          git commit -m "Keep alive update: $random_string"
+          git commit -m "Keep alive update"
           git push
