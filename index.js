@@ -1,5 +1,13 @@
 const fs = require('fs');
 
+function getCurrentTime() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+  return `${hours}:${minutes}:${seconds}`;
+}
+
 function generateRandomString(length) {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
@@ -20,13 +28,16 @@ function updateReadme() {
   // Generate a random string
   const randomString = generateRandomString(8);
 
-  // Append the random string and the incremented count to README.md
-  const newContent = `${readmeContent}\n${randomString}  keep alive ${keepAliveCount}\n`;
+  // Get the current time
+  const currentTime = getCurrentTime();
+
+  // Append the time, random string, and the incremented count to README.md
+  const newContent = `${readmeContent}\n${currentTime} ${randomString}  keep alive ${keepAliveCount}\n`;
 
   // Write the updated content back to README.md
   fs.writeFileSync('README.md', newContent);
 
-  console.log(`Updated README.md with: ${randomString}  keep alive ${keepAliveCount}`);
+  console.log(`Updated README.md with: ${currentTime} ${randomString}  keep alive ${keepAliveCount}`);
 }
 
 updateReadme();

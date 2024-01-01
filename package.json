@@ -1,0 +1,27 @@
+{
+  "name": "keep-alive",
+  "version": "1.0.0",
+  "description": "keep a github profile alive",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudoevans/keep-alive.git"
+  },
+  "keywords": [
+    "keep",
+    "alive",
+    "github",
+    "profile",
+    "keeper",
+    "actions"
+  ],
+  "author": "sudoevans",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudoevans/keep-alive/issues"
+  },
+  "homepage": "https://github.com/sudoevans/keep-alive#readme"
+}
