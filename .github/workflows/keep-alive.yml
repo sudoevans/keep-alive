@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: '* * * * *' # Run every minute for testing
+    - cron: '58 23 * * *' # Run every day at 11:58 PM (UTC)
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
