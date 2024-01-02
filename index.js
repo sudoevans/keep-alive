@@ -18,8 +18,8 @@ function generateRandomString(length) {
 }
 
 function updateReadme() {
-  // Read the current content of README.md
-  const readmeContent = fs.readFileSync('README.md', 'utf-8');
+  // Read the current content of Update.md
+  const readmeContent = fs.readFileSync('Update.md', 'utf-8');
 
   // Increment the keep alive count
   const matches = readmeContent.match(/keep alive (\d+)/g);
@@ -35,9 +35,9 @@ function updateReadme() {
   const newContent = `${readmeContent}\n${currentTime} ${randomString}  keep alive ${keepAliveCount}\n`;
 
   // Write the updated content back to README.md
-  fs.writeFileSync('README.md', newContent);
+  fs.writeFileSync('Update.md', newContent);
 
-  console.log(`Updated README.md with: ${currentTime} ${randomString}  keep alive ${keepAliveCount}`);
+  console.log(`Kept alive with: ${currentTime} ${randomString}  keep alive ${keepAliveCount}`);
 }
 
 updateReadme();
