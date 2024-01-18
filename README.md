@@ -1,8 +1,9 @@
 # Keep Alive 
 ![image](https://github.com/sudoevans/keep-alive/assets/75899973/1d7a3ace-f3dc-4f6a-a1e9-aedf0dbd56f9)
 
-**Octocat to Keep my profile alive.**
-<img src="https://github.com/sudoevans/keep-alive/assets/75899973/46d19a3e-bc41-48ca-a034-95a3377c4fb5" alt="drawing" height="400" width="400"/>
+**Octocat to Keep my pyrofile alive.**
+
+![keep-alive-removebg-preview](https://github.com/sudoevans/keep-alive/assets/75899973/e5fea844-e00b-403d-9bf4-3f8553003599)
 
 ## Action 
 ```yaml
